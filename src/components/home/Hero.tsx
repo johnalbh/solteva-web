@@ -39,7 +39,7 @@ export default async function Hero({ locale }: HeroProps) {
       {/* Content — Apple iPhone hero: centered, max-width constrained */}
       <div
         className="relative z-10 flex flex-col items-center justify-center text-center min-h-[100svh]"
-        style={{ padding: "clamp(6rem, 10vw, 10rem) clamp(1.5rem, 6.25vw, 6rem) clamp(5rem, 8vw, 8rem)" }}
+        style={{ padding: "clamp(5rem, 8vw, 9rem) clamp(1.25rem, 5vw, 5rem) clamp(4rem, 7vw, 7rem)" }}
       >
         {/* Eyebrow */}
         <p
@@ -116,9 +116,9 @@ export default async function Hero({ locale }: HeroProps) {
           ))}
         </div>
 
-        {/* Product label — bottom center, higher contrast */}
+        {/* Product label — bottom center, only on sm+ to avoid mobile clutter */}
         <div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center"
+          className="hidden sm:block absolute bottom-10 left-1/2 -translate-x-1/2 text-center"
           aria-hidden
         >
           <div

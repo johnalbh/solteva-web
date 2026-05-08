@@ -44,7 +44,7 @@ export default async function LocaleLayout({
         {locale === "es" ? "Ir al contenido principal" : "Skip to main content"}
       </a>
       <Header />
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="flex-1 pb-44 lg:pb-0">
         {children}
       </main>
       <Footer />

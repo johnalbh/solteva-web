@@ -43,10 +43,12 @@ export default async function TrustStrip({ locale }: Props) {
           {STATS.map(({ value, key }, i) => (
             <li
               key={key}
-              className="flex flex-col items-center text-center py-8 px-4"
-              style={{
-                borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.07)" : "none",
-              }}
+              className={[
+                "flex flex-col items-center text-center py-8 px-4 border-white/[0.07]",
+                i % 2 !== 0 ? "border-l" : "",      // col-2 on mobile
+                i >= 2 ? "border-t lg:border-t-0" : "",  // row-2 on mobile only
+                i > 0 ? "lg:border-l" : "",          // all except first on desktop
+              ].filter(Boolean).join(" ")}
             >
               <span
                 className="stat-number mb-2"

@@ -77,7 +77,7 @@ export default function ContactForm() {
       <input type="text" {...register("honeypot")} style={{ display: "none" }} tabIndex={-1} autoComplete="off" aria-hidden />
 
       {/* Name + Phone */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: 12 }}>
         <AppleField
           label={es ? "Nombre *" : "Name *"}
           error={errors.name?.message}
@@ -91,7 +91,7 @@ export default function ContactForm() {
       </div>
 
       {/* Email + City */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: 12 }}>
         <AppleField
           label="Email"
           error={errors.email?.message}

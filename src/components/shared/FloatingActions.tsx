@@ -32,13 +32,13 @@ export default function FloatingActions() {
       <div
         style={{
           position: "fixed",
-          bottom: 24,
-          right: 20,
+          bottom: "max(1.25rem, env(safe-area-inset-bottom, 0px) + 0.75rem)",
+          right: 16,
           zIndex: 50,
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-end",
-          gap: 10,
+          gap: 8,
         }}
       >
         {/* WhatsApp */}
@@ -67,16 +67,18 @@ export default function FloatingActions() {
           <FileText size={20} aria-hidden />
         </FABButton>
 
-        {/* Llamar */}
-        <FABLink
-          href="tel:+34900100133"
-          bg="rgb(29,29,31)"
-          shadow="rgba(0,0,0,0.22)"
-          label="900 100 133"
-          aria-label={es ? "Llamar ahora" : "Call now"}
-        >
-          <Phone size={20} aria-hidden />
-        </FABLink>
+        {/* Llamar — solo desktop */}
+        <div className="hidden sm:block">
+          <FABLink
+            href="tel:+34900100133"
+            bg="rgb(29,29,31)"
+            shadow="rgba(0,0,0,0.22)"
+            label="900 100 133"
+            aria-label={es ? "Llamar ahora" : "Call now"}
+          >
+            <Phone size={20} aria-hidden />
+          </FABLink>
+        </div>
       </div>
 
       <QuoteDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} locale={locale} />
