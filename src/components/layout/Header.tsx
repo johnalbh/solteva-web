@@ -154,7 +154,8 @@ export default function Header() {
         </div>
 
         {/* Mobile hamburger */}
-        <div className="flex lg:hidden items-center gap-3">
+        <div className="flex lg:hidden items-center gap-2.5">
+          <LanguageSwitcher />
           <a href="tel:+34900100133" aria-label="Llamar 900 100 133" className="text-[var(--primary)]">
             <Phone size={18} aria-hidden />
           </a>
@@ -231,7 +232,6 @@ export default function Header() {
                   <Phone size={14} aria-hidden />
                   900 100 133
                 </a>
-                <div className="flex justify-center pt-1"><LanguageSwitcher /></div>
               </div>
             </SheetContent>
           </Sheet>
