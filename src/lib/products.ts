@@ -1,0 +1,591 @@
+export type ProductCategory =
+  | "stairlifts"
+  | "platforms"
+  | "verticalLifts"
+  | "poolLift"
+  | "ramps"
+
+export type StaircaseType = "straight" | "curved" | "outdoor" | "both"
+
+export interface ProductSpec {
+  labelEs: string
+  labelEn: string
+  value: string
+}
+
+export interface ProductPdf {
+  type: "brochure" | "spec"
+  labelEs: string
+  labelEn: string
+  url: string
+}
+
+export interface Product {
+  id: string
+  slug: string
+  category: ProductCategory
+  staircaseType?: StaircaseType
+  nameEs: string
+  nameEn: string
+  shortDescEs: string
+  shortDescEn: string
+  longDescEs: string
+  longDescEn: string
+  heroImage: string
+  galleryImages: string[]
+  specs: ProductSpec[]
+  features: { es: string; en: string }[]
+  idealForEs: string[]
+  idealForEn: string[]
+  pdfs: ProductPdf[]
+  videoUrl?: string
+  fromPrice?: string
+  financingFrom?: string
+  brands: string[]
+  isOutdoor?: boolean
+  isNew?: boolean
+  relatedSlugs?: string[]
+}
+
+export const products: Product[] = [
+  {
+    id: "handicare-950",
+    slug: "handicare-950",
+    category: "stairlifts",
+    staircaseType: "straight",
+    nameEs: "Silla Salvaescaleras Recta Handicare 950",
+    nameEn: "Straight Stairlift Handicare 950",
+    shortDescEs: "La silla salvaescaleras recta más económica y sencilla del mercado. Instalación en 3-5 días.",
+    shortDescEn: "The most affordable and easy-to-install straight stairlift. Fitted in 3-5 days.",
+    longDescEs: "Los salvaescaleras Handicare te ofrecen una solución segura y fiable. El Handicare 950 es el único sistema con recarga especial de baterías a lo largo de todo el recorrido, garantizando que siempre funcione aunque haya un corte de luz. Mínimo espacio en la escalera, máxima comodidad. Homologado por servicios de inspección independientes en todo el mundo.",
+    longDescEn: "The Handicare stairlifts offer a safe and reliable solution. The 950 features a unique continuous battery charging system throughout the rail, ensuring it always works even during power cuts. Minimum space on the staircase, maximum comfort. Approved by independent inspection services worldwide.",
+    heroImage: "/images/products/stairlifts/handicare-950/img-1.jpg",
+    galleryImages: Array.from({ length: 10 }, (_, i) => `/images/products/stairlifts/handicare-950/img-${i + 1}.jpg`),
+    specs: [
+      { labelEs: "Tipo de escalera", labelEn: "Staircase type", value: "Recta / Straight" },
+      { labelEs: "Uso", labelEn: "Use", value: "Interior / Indoor" },
+      { labelEs: "Capacidad máxima", labelEn: "Max. load", value: "120 kg" },
+      { labelEs: "Recarga batería", labelEn: "Battery charging", value: "Continua en todo el recorrido / Continuous on rail" },
+      { labelEs: "Instalación", labelEn: "Installation", value: "3-5 días / 3-5 days" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · ISO" },
+    ],
+    features: [
+      { es: "Batería de recarga continua: funciona aunque se vaya la luz", en: "Continuous battery charging: works even during power cuts" },
+      { es: "Ocupa el mínimo espacio en la escalera", en: "Minimum space on the staircase" },
+      { es: "Instalación rápida en 3-5 días sin obras", en: "Fast installation in 3-5 days, no construction" },
+      { es: "Certificado CE e ISO por inspectores independientes", en: "CE and ISO certified by independent inspectors" },
+      { es: "Sistemas de seguridad avanzados en asiento y reposapiés", en: "Advanced safety systems on seat and footrest" },
+      { es: "Bajo mantenimiento y alta durabilidad", en: "Low maintenance and high durability" },
+    ],
+    idealForEs: ["Escaleras completamente rectas", "Presupuesto ajustado", "Instalación urgente"],
+    idealForEn: ["Completely straight staircases", "Limited budget", "Urgent installation needed"],
+    pdfs: [
+      { type: "brochure", labelEs: "Folleto Handicare 950", labelEn: "Handicare 950 Brochure", url: "/pdfs/handicare-950-folleto.pdf" },
+      { type: "spec", labelEs: "Ficha técnica dimensional", labelEn: "Dimensional specification sheet", url: "/pdfs/handicare-950-dimensiones.pdf" },
+    ],
+    fromPrice: "2.490 €",
+    financingFrom: "38,91 €/mes",
+    brands: ["HANDICARE", "MINIVATOR"],
+    relatedSlugs: ["platinum-ergo", "freecurve"],
+  },
+  {
+    id: "platinum-ergo",
+    slug: "platinum-ergo",
+    category: "stairlifts",
+    staircaseType: "curved",
+    nameEs: "Silla Salvaescaleras Curva Doble Raíl Platinum Ergo",
+    nameEn: "Curved Dual-Rail Stairlift Platinum Ergo",
+    shortDescEs: "Diseño doble raíl de perfil súper reducido. A medida para tu escalera curva. Capacidad hasta 160 kg.",
+    shortDescEn: "Super-slim dual-rail design. Custom-made for your curved staircase. Capacity up to 160 kg.",
+    longDescEs: "La Platinum Ergo es nuestra silla salvaescaleras curva con doble raíl de perfil súper reducido, ocupando solo 10-12 cm de la escalera. Fabricada a medida para cada escalera. Ideal para comunidades de vecinos hasta 5 plantas. Capacidad estándar 120 kg y versión reforzada hasta 160 kg. Sistemas avanzados de seguridad y confort.",
+    longDescEn: "The Platinum Ergo curved stairlift features a super-reduced dual-rail profile, occupying only 10-12 cm of the staircase. Custom-made for each staircase. Ideal for apartment buildings up to 5 floors. Standard capacity 120 kg, heavy-duty version up to 160 kg. Advanced safety and comfort systems.",
+    heroImage: "/images/products/stairlifts/platinum-ergo/main.jpg",
+    galleryImages: Array.from({ length: 10 }, (_, i) => `/images/products/stairlifts/platinum-ergo/img-${i + 1}.jpg`),
+    specs: [
+      { labelEs: "Tipo de escalera", labelEn: "Staircase type", value: "Curva / Curved" },
+      { labelEs: "Ancho ocupado", labelEn: "Rail width", value: "10-12 cm" },
+      { labelEs: "Capacidad estándar", labelEn: "Standard load", value: "120 kg" },
+      { labelEs: "Capacidad reforzada", labelEn: "Heavy-duty load", value: "160 kg" },
+      { labelEs: "Fabricación", labelEn: "Manufacturing", value: "A medida / Custom-made" },
+      { labelEs: "Plantas", labelEn: "Floors", value: "Hasta 5 / Up to 5" },
+      { labelEs: "Instalación", labelEn: "Installation", value: "3-4 semanas / 3-4 weeks" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · ISO" },
+    ],
+    features: [
+      { es: "Perfil doble raíl súper reducido: solo 10-12 cm de ancho", en: "Super-slim dual-rail profile: only 10-12 cm wide" },
+      { es: "Fabricación a medida para cada escalera curva", en: "Custom-made for each curved staircase" },
+      { es: "Versión reforzada para usuarios hasta 160 kg", en: "Heavy-duty version for users up to 160 kg" },
+      { es: "Válida para escaleras de hasta 5 plantas", en: "Suitable for staircases up to 5 floors" },
+      { es: "Batería integrada: funciona sin electricidad", en: "Integrated battery: works without mains power" },
+      { es: "Sistemas de seguridad avanzados certificados CE e ISO", en: "Advanced CE and ISO certified safety systems" },
+    ],
+    idealForEs: ["Escaleras curvas", "Comunidades de vecinos", "Usuarios hasta 160 kg"],
+    idealForEn: ["Curved staircases", "Apartment buildings", "Users up to 160 kg"],
+    pdfs: [],
+    brands: ["PLATINUM"],
+    relatedSlugs: ["freecurve", "handicare-2000-exterior"],
+  },
+  {
+    id: "freecurve",
+    slug: "freecurve",
+    category: "stairlifts",
+    staircaseType: "curved",
+    nameEs: "Silla Salvaescaleras Curva Mono-Raíl Handicare Freecurve",
+    nameEn: "Curved Mono-Rail Stairlift Handicare Freecurve",
+    shortDescEs: "Raíl único curvo de la familia Handicare. El modelo más ligero y elegante para escaleras curvas.",
+    shortDescEn: "Single curved rail from the Handicare family. The lightest and most elegant model for curved staircases.",
+    longDescEs: "La Handicare Freecurve es la silla salvaescaleras curva con raíl único más avanzada del mercado. Su diseño mono-raíl la hace especialmente ligera y estética, manteniéndose fiel a los estándares de seguridad y fiabilidad de Handicare. Fabricada a medida, sistema de carga de batería continua y plegado compacto.",
+    longDescEn: "The Handicare Freecurve is the most advanced single-rail curved stairlift on the market. Its mono-rail design makes it especially lightweight and elegant, while maintaining Handicare's safety and reliability standards. Custom-made, continuous battery charging system and compact folding.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo de escalera", labelEn: "Staircase type", value: "Curva / Curved" },
+      { labelEs: "Sistema de raíl", labelEn: "Rail system", value: "Mono-raíl / Single rail" },
+      { labelEs: "Uso", labelEn: "Use", value: "Interior / Indoor" },
+      { labelEs: "Fabricación", labelEn: "Manufacturing", value: "A medida / Custom-made" },
+      { labelEs: "Recarga batería", labelEn: "Battery charging", value: "Continua / Continuous" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · ISO" },
+    ],
+    features: [
+      { es: "Diseño mono-raíl: la más ligera y estética del mercado curvo", en: "Mono-rail design: the lightest and most elegant curved model" },
+      { es: "Fabricación a medida para cada escalera", en: "Custom-made for each staircase" },
+      { es: "Recarga de batería continua a lo largo del raíl", en: "Continuous battery charging along the rail" },
+      { es: "Plegado compacto para máximo espacio libre en escalera", en: "Compact folding for maximum free staircase space" },
+      { es: "Estándares de seguridad y fiabilidad Handicare", en: "Handicare safety and reliability standards" },
+    ],
+    idealForEs: ["Escaleras curvas con poco espacio", "Quienes buscan diseño discreto", "Usuarios de movilidad reducida"],
+    idealForEn: ["Curved staircases with limited space", "Those seeking a discreet design", "Users with limited mobility"],
+    pdfs: [],
+    brands: ["HANDICARE"],
+    relatedSlugs: ["platinum-ergo", "handicare-950"],
+  },
+  {
+    id: "handicare-2000-exterior",
+    slug: "handicare-2000-exterior",
+    category: "stairlifts",
+    staircaseType: "outdoor",
+    nameEs: "Silla Salvaescaleras Curva Doble-Raíl Handicare 2000 Exterior",
+    nameEn: "Outdoor Curved Dual-Rail Stairlift Handicare 2000",
+    shortDescEs: "Modelo todo-tiempo para escaleras exteriores. Resistente a la intemperie con protección IP65.",
+    shortDescEn: "All-weather model for outdoor staircases. Weatherproof with IP65 protection.",
+    longDescEs: "La Handicare 2000 Exterior es la silla salvaescaleras curva diseñada específicamente para escaleras exteriores. Su protección IP65 la hace completamente resistente a la lluvia, humedad y variaciones de temperatura. Construida en materiales de acero inoxidable y materiales tratados para exteriores, con cubierta de protección incluida.",
+    longDescEn: "The Handicare 2000 Outdoor is the curved stairlift specifically designed for outdoor staircases. Its IP65 rating makes it completely resistant to rain, humidity and temperature variations. Built with stainless steel and outdoor-treated materials, including a protective cover.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo de escalera", labelEn: "Staircase type", value: "Curva exterior / Outdoor curved" },
+      { labelEs: "Protección", labelEn: "Protection", value: "IP65 — resistente agua y polvo / waterproof & dustproof" },
+      { labelEs: "Material", labelEn: "Material", value: "Acero inoxidable / Stainless steel" },
+      { labelEs: "Cubierta protectora", labelEn: "Protective cover", value: "Incluida / Included" },
+      { labelEs: "Fabricación", labelEn: "Manufacturing", value: "A medida / Custom-made" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · ISO" },
+    ],
+    features: [
+      { es: "Protección IP65: resistente a lluvia, humedad y polvo", en: "IP65 rated: resistant to rain, humidity and dust" },
+      { es: "Materiales de acero inoxidable para máxima durabilidad exterior", en: "Stainless steel materials for maximum outdoor durability" },
+      { es: "Cubierta de protección incluida para cuando no se usa", en: "Protective cover included for when not in use" },
+      { es: "Fabricada a medida para cada escalera exterior", en: "Custom-made for each outdoor staircase" },
+      { es: "Funciona con batería integrada en cualquier condición", en: "Operates with integrated battery in any condition" },
+    ],
+    idealForEs: ["Escaleras exteriores de jardín o terraza", "Acceso a portales o entradas exteriores", "Zonas costeras o húmedas"],
+    idealForEn: ["Garden or terrace outdoor staircases", "Exterior building entrance access", "Coastal or humid areas"],
+    pdfs: [],
+    isOutdoor: true,
+    brands: ["HANDICARE"],
+    relatedSlugs: ["platinum-ergo", "freecurve"],
+  },
+  {
+    id: "logic",
+    slug: "logic",
+    category: "platforms",
+    staircaseType: "straight",
+    nameEs: "Plataforma Salvaescaleras Recta Logic",
+    nameEn: "Straight Platform Lift Logic",
+    shortDescEs: "La plataforma salvaescaleras más vendida y recomendada. Diseño ultra-slim para silla de ruedas.",
+    shortDescEn: "The best-selling and most recommended platform lift. Ultra-slim design for wheelchairs.",
+    longDescEs: "La plataforma Logic de Extrema es la más vendida por su diseño extremadamente delgado que aprovecha al máximo el espacio de la escalera. Funciona con batería recargable (funciona sin luz), cierre motorizado de plataforma y barandillas, sistema de detección de obstáculos y construcción en aluminio anodizado.",
+    longDescEn: "The Extrema Logic platform lift is the best-seller thanks to its extremely slim design that maximises staircase space. Battery-operated (works without power), motorised platform and rail closure, obstacle detection system, anodised aluminium construction.",
+    heroImage: "/images/products/platforms/logic/img-10.jpg",
+    galleryImages: Array.from({ length: 6 }, (_, i) => `/images/products/platforms/logic/img-${i + 10}.jpg`),
+    specs: [
+      { labelEs: "Tipo", labelEn: "Type", value: "Plataforma recta / Straight platform" },
+      { labelEs: "Usuarios", labelEn: "Users", value: "Silla de ruedas + acompañante / Wheelchair + companion" },
+      { labelEs: "Batería", labelEn: "Battery", value: "Recargable — funciona sin luz / Rechargeable — works without power" },
+      { labelEs: "Cierre", labelEn: "Closure", value: "Motorizado / Motorised" },
+      { labelEs: "Material", labelEn: "Material", value: "Aluminio anodizado / Anodised aluminium" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "Diseño ultra-slim: el más delgado del mercado", en: "Ultra-slim design: the thinnest on the market" },
+      { es: "Batería recargable: funciona aunque no haya luz", en: "Rechargeable battery: works without mains power" },
+      { es: "Cierre motorizado de plataforma y barandillas de seguridad", en: "Motorised platform and safety rail closure" },
+      { es: "Sistema automático de detección de obstáculos", en: "Automatic obstacle detection system" },
+      { es: "Aluminio anodizado: duradero en interior y exterior", en: "Anodised aluminium: durable indoors and outdoors" },
+      { es: "Asiento plegable para usuarios que no van en silla de ruedas", en: "Folding seat for users not using a wheelchair" },
+    ],
+    idealForEs: ["Usuarios de silla de ruedas", "Escaleras rectas de comunidades", "Interior y exterior"],
+    idealForEn: ["Wheelchair users", "Straight community staircases", "Indoor and outdoor use"],
+    pdfs: [],
+    brands: ["EXTREMA"],
+    relatedSlugs: ["slim", "supra"],
+  },
+  {
+    id: "slim",
+    slug: "slim",
+    category: "platforms",
+    staircaseType: "straight",
+    nameEs: "Plataforma Salvaescaleras Slim",
+    nameEn: "Slim Platform Lift",
+    shortDescEs: "La plataforma de menor anchura del mercado. Ideal para escaleras muy estrechas.",
+    shortDescEn: "The narrowest platform lift on the market. Ideal for very narrow staircases.",
+    longDescEs: "La plataforma Slim está diseñada específicamente para escaleras de anchura reducida donde otras plataformas no caben. Su perfil más estrecho no compromete la seguridad ni la funcionalidad, manteniendo todas las características de batería recargable y cierre motorizado.",
+    longDescEn: "The Slim platform lift is specifically designed for narrow staircases where other platforms don't fit. Its narrower profile does not compromise safety or functionality, maintaining all rechargeable battery and motorised closure features.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo", labelEn: "Type", value: "Plataforma estrecha / Narrow platform" },
+      { labelEs: "Uso ideal", labelEn: "Ideal use", value: "Escaleras muy estrechas / Very narrow staircases" },
+      { labelEs: "Batería", labelEn: "Battery", value: "Recargable / Rechargeable" },
+      { labelEs: "Cierre", labelEn: "Closure", value: "Motorizado / Motorised" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "El perfil de anchura más reducido del mercado", en: "The narrowest profile on the market" },
+      { es: "Solución donde otras plataformas no caben", en: "Solution where other platforms don't fit" },
+      { es: "Batería recargable: funciona sin electricidad", en: "Rechargeable battery: works without power" },
+      { es: "Cierre motorizado de seguridad", en: "Motorised safety closure" },
+      { es: "Cumple normativa europea de accesibilidad", en: "Complies with European accessibility standards" },
+    ],
+    idealForEs: ["Escaleras muy estrechas", "Edificios históricos o con espacio limitado", "Usuarios de silla de ruedas"],
+    idealForEn: ["Very narrow staircases", "Historic buildings or limited space", "Wheelchair users"],
+    pdfs: [],
+    brands: ["EXTREMA"],
+    relatedSlugs: ["logic", "supra"],
+  },
+  {
+    id: "supra",
+    slug: "supra",
+    category: "platforms",
+    staircaseType: "straight",
+    nameEs: "Plataforma Salvaescaleras Supra",
+    nameEn: "Supra Platform Lift",
+    shortDescEs: "Mayor capacidad de carga y superficie de plataforma. Para sillas eléctricas y usuarios más grandes.",
+    shortDescEn: "Greater load capacity and platform surface. For electric wheelchairs and larger users.",
+    longDescEs: "La plataforma Supra ofrece la mayor superficie de plataforma y capacidad de carga de nuestra gama. Diseñada para usuarios con sillas de ruedas eléctricas o aquellos que necesitan más espacio. Construida con los mismos estándares de calidad y seguridad que el resto de la gama.",
+    longDescEn: "The Supra platform lift offers the largest platform surface and load capacity in our range. Designed for electric wheelchair users or those who need more space. Built to the same quality and safety standards as the rest of the range.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo", labelEn: "Type", value: "Plataforma gran capacidad / High-capacity platform" },
+      { labelEs: "Ideal para", labelEn: "Ideal for", value: "Sillas eléctricas / Electric wheelchairs" },
+      { labelEs: "Batería", labelEn: "Battery", value: "Recargable / Rechargeable" },
+      { labelEs: "Cierre", labelEn: "Closure", value: "Motorizado / Motorised" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "Mayor superficie de plataforma de la gama", en: "Largest platform surface in the range" },
+      { es: "Capacidad de carga reforzada para sillas eléctricas", en: "Reinforced load capacity for electric wheelchairs" },
+      { es: "Batería recargable: funciona sin electricidad", en: "Rechargeable battery: works without power" },
+      { es: "Cierre motorizado de barandillas y plataforma", en: "Motorised platform and rail closure" },
+      { es: "Mismos estándares de seguridad que toda la gama", en: "Same safety standards as the entire range" },
+    ],
+    idealForEs: ["Sillas de ruedas eléctricas", "Usuarios de mayor tamaño o peso", "Máximo confort en plataforma"],
+    idealForEn: ["Electric wheelchairs", "Larger or heavier users", "Maximum platform comfort"],
+    pdfs: [],
+    brands: ["EXTREMA"],
+    relatedSlugs: ["logic", "slim"],
+  },
+  {
+    id: "stepper",
+    slug: "stepper",
+    category: "platforms",
+    nameEs: "Plataforma Salvaescaleras Stepper",
+    nameEn: "Stepper Platform Lift",
+    shortDescEs: "Solución especial para escaleras con rellanos o cambios de dirección.",
+    shortDescEn: "Special solution for staircases with landings or direction changes.",
+    longDescEs: "La plataforma Stepper está diseñada para escaleras complejas que presentan rellanos intermedios o cambios de dirección. Gracias a su tecnología especial, puede adaptarse a escaleras que otros modelos no pueden resolver, ofreciendo siempre la misma seguridad y comodidad.",
+    longDescEn: "The Stepper platform lift is designed for complex staircases with intermediate landings or direction changes. Thanks to its special technology, it can adapt to staircases that other models cannot handle, always offering the same safety and comfort.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo", labelEn: "Type", value: "Plataforma con rellano / Platform with landing" },
+      { labelEs: "Ideal para", labelEn: "Ideal for", value: "Escaleras con cambios de dirección / Staircases with direction changes" },
+      { labelEs: "Batería", labelEn: "Battery", value: "Recargable / Rechargeable" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "Adaptable a escaleras con rellanos intermedios", en: "Adaptable to staircases with intermediate landings" },
+      { es: "Solución para escaleras con cambios de dirección", en: "Solution for staircases with direction changes" },
+      { es: "Batería recargable para uso sin electricidad", en: "Rechargeable battery for use without power" },
+      { es: "Misma seguridad que el resto de plataformas de la gama", en: "Same safety as the rest of the platform range" },
+    ],
+    idealForEs: ["Escaleras con rellanos", "Escaleras en L o U", "Edificios públicos y privados"],
+    idealForEn: ["Staircases with landings", "L-shaped or U-shaped staircases", "Public and private buildings"],
+    pdfs: [],
+    brands: ["EXTREMA"],
+    relatedSlugs: ["logic", "supra"],
+  },
+  {
+    id: "dizalo",
+    slug: "dizalo",
+    category: "verticalLifts",
+    nameEs: "Elevador Vertical Corta Altura Dizalo",
+    nameEn: "Short-Rise Vertical Platform Lift Dizalo",
+    shortDescEs: "Elevador de tijera para diferencias de altura hasta 830 mm. Sin obras. Solo 52,5 kg.",
+    shortDescEn: "Scissor-lift for height differences up to 830mm. No construction. Only 52.5 kg.",
+    longDescEs: "El Dizalo es un elevador de corta altura que NO NECESITA OBRA para su instalación. Tecnología de tijera para superar desniveles hasta 830 mm. Control por cable espiral. Plataforma antideslizante. Compatible con enchufes domésticos estándar. Solo pesa 52,5 kg con ruedas para fácil reubicación.",
+    longDescEn: "The Dizalo is a short-rise lift that REQUIRES NO CONSTRUCTION. Scissor-lift technology for height differences up to 830mm. Spiral cable control. Non-slip platform. Standard household power outlet. Only 52.5 kg with mobility wheels.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Altura máxima", labelEn: "Max. rise", value: "830 mm" },
+      { labelEs: "Peso", labelEn: "Weight", value: "52,5 kg" },
+      { labelEs: "Alimentación", labelEn: "Power", value: "Enchufe doméstico / Standard outlet" },
+      { labelEs: "Obras", labelEn: "Construction", value: "No necesita / None required" },
+      { labelEs: "Uso", labelEn: "Use", value: "Interior y exterior / Indoor & outdoor" },
+      { labelEs: "Tecnología", labelEn: "Technology", value: "Tijera / Scissor-lift" },
+    ],
+    features: [
+      { es: "Instalación sin obras: listo en pocas horas", en: "No construction installation: ready in a few hours" },
+      { es: "Tecnología de tijera para desniveles hasta 830 mm", en: "Scissor-lift technology for rises up to 830mm" },
+      { es: "Solo 52,5 kg con ruedas: fácil de reubicar", en: "Only 52.5 kg with wheels: easy to relocate" },
+      { es: "Compatible con enchufe doméstico estándar", en: "Compatible with standard household power outlet" },
+      { es: "Plataforma antideslizante y rampa de acceso", en: "Non-slip platform and access ramp" },
+    ],
+    idealForEs: ["Pequeños desniveles hasta 83 cm", "Sin posibilidad de obras", "Interior y exterior"],
+    idealForEn: ["Small height differences up to 83 cm", "No construction possible", "Indoor and outdoor"],
+    pdfs: [
+      { type: "brochure", labelEs: "Folleto Dizalo", labelEn: "Dizalo Brochure", url: "/pdfs/dizalo-folleto.pdf" },
+    ],
+    brands: ["DIZALO"],
+    relatedSlugs: ["epa-1", "teorema"],
+  },
+  {
+    id: "mizar-liliput",
+    slug: "mizar-liliput",
+    category: "verticalLifts",
+    nameEs: "Elevador Vertical Mizar y Liliput",
+    nameEn: "Mizar and Liliput Vertical Lift",
+    shortDescEs: "Elevadores verticales compactos para interiores. Sin foso, sin sala de máquinas.",
+    shortDescEn: "Compact vertical lifts for indoors. No pit, no machine room.",
+    longDescEs: "Los elevadores Mizar y Liliput son soluciones compactas de elevación vertical para interiores residenciales y comerciales. No necesitan foso ni sala de máquinas, lo que simplifica enormemente su instalación. Disponibles en diferentes capacidades y acabados para adaptarse a cualquier decoración.",
+    longDescEn: "The Mizar and Liliput lifts are compact vertical lifting solutions for residential and commercial interiors. They require no pit or machine room, greatly simplifying installation. Available in different capacities and finishes to suit any décor.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo", labelEn: "Type", value: "Elevador compacto / Compact lift" },
+      { labelEs: "Uso", labelEn: "Use", value: "Interior / Indoor" },
+      { labelEs: "Foso requerido", labelEn: "Pit required", value: "No / No" },
+      { labelEs: "Sala de máquinas", labelEn: "Machine room", value: "No / No" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "Sin foso ni sala de máquinas: instalación simplificada", en: "No pit or machine room: simplified installation" },
+      { es: "Diseño compacto para espacios reducidos", en: "Compact design for small spaces" },
+      { es: "Disponible en múltiples acabados", en: "Available in multiple finishes" },
+      { es: "Certificado CE y normativa europea", en: "CE certified and European standards compliant" },
+    ],
+    idealForEs: ["Interiores residenciales", "Locales comerciales", "Sin posibilidad de foso"],
+    idealForEn: ["Residential interiors", "Commercial premises", "No pit possible"],
+    pdfs: [],
+    brands: ["VIMEC"],
+    relatedSlugs: ["dizalo", "teorema"],
+  },
+  {
+    id: "teorema",
+    slug: "teorema",
+    category: "verticalLifts",
+    nameEs: "Elevador Vertical Teorema",
+    nameEn: "Teorema Vertical Platform Lift",
+    shortDescEs: "Elevador de altura media para interiores residenciales y comerciales. Diseño elegante.",
+    shortDescEn: "Mid-height lift for residential and commercial interiors. Elegant design.",
+    longDescEs: "El elevador Teorema combina funcionalidad y estética en un elevador vertical de altura media, ideal para viviendas unifamiliares y edificios de hasta 3-4 plantas. Su diseño elegante con cabina acristalada lo integra perfectamente en cualquier entorno.",
+    longDescEn: "The Teorema lift combines functionality and aesthetics in a mid-height vertical lift, ideal for single-family homes and buildings up to 3-4 floors. Its elegant design with glass cabin integrates perfectly in any environment.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo", labelEn: "Type", value: "Elevador residencial / Residential lift" },
+      { labelEs: "Plantas", labelEn: "Floors", value: "Hasta 3-4 / Up to 3-4" },
+      { labelEs: "Acabado", labelEn: "Finish", value: "Cabina acristalada / Glass cabin" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "Diseño elegante con cabina acristalada", en: "Elegant design with glass cabin" },
+      { es: "Ideal para viviendas unifamiliares hasta 4 plantas", en: "Ideal for single-family homes up to 4 floors" },
+      { es: "Integración perfecta en cualquier decoración", en: "Perfect integration in any décor" },
+      { es: "Certificado CE y normativa europea", en: "CE certified and European standards" },
+    ],
+    idealForEs: ["Viviendas unifamiliares", "Hasta 3-4 plantas", "Diseño premium"],
+    idealForEn: ["Single-family homes", "Up to 3-4 floors", "Premium design"],
+    pdfs: [],
+    brands: ["VIMEC"],
+    relatedSlugs: ["mizar-liliput", "epa-2000"],
+  },
+  {
+    id: "elfo",
+    slug: "elfo",
+    category: "verticalLifts",
+    nameEs: "Elevador Vertical Elfo",
+    nameEn: "Elfo Vertical Lift",
+    shortDescEs: "Elevador compacto para espacios reducidos. Fácil instalación sin reformas.",
+    shortDescEn: "Compact lift for tight spaces. Easy installation without renovation.",
+    longDescEs: "El elevador Elfo es la solución perfecta cuando el espacio disponible es muy reducido. Su tamaño compacto permite instalarlo en espacios donde otros elevadores no caben, sin necesidad de grandes reformas ni obras.",
+    longDescEn: "The Elfo lift is the perfect solution when available space is very limited. Its compact size allows installation in spaces where other lifts don't fit, without major renovations or construction work.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo", labelEn: "Type", value: "Elevador compacto / Compact lift" },
+      { labelEs: "Espacio requerido", labelEn: "Space required", value: "Mínimo / Minimal" },
+      { labelEs: "Obras", labelEn: "Construction", value: "Mínimas / Minimal" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "Tamaño ultra-compacto para espacios muy reducidos", en: "Ultra-compact size for very tight spaces" },
+      { es: "Instalación sin grandes reformas", en: "Installation without major renovation" },
+      { es: "Solución donde no caben otros elevadores", en: "Solution where other lifts don't fit" },
+      { es: "Certificado CE", en: "CE certified" },
+    ],
+    idealForEs: ["Espacios muy reducidos", "Sin posibilidad de grandes obras", "Uso residencial"],
+    idealForEn: ["Very tight spaces", "No major renovation possible", "Residential use"],
+    pdfs: [],
+    brands: ["VIMEC"],
+    relatedSlugs: ["dizalo", "mizar-liliput"],
+  },
+  {
+    id: "orion",
+    slug: "orion",
+    category: "verticalLifts",
+    nameEs: "Elevador Vertical Orion",
+    nameEn: "Orion Vertical Lift",
+    shortDescEs: "Elevador de gran capacidad para uso intensivo residencial y comercial.",
+    shortDescEn: "High-capacity lift for intensive residential and commercial use.",
+    longDescEs: "El elevador Orion está diseñado para un uso más intensivo y una mayor capacidad de carga. Ideal para edificios residenciales con varios vecinos o establecimientos comerciales donde la accesibilidad es una prioridad.",
+    longDescEn: "The Orion lift is designed for more intensive use and greater load capacity. Ideal for residential buildings with multiple residents or commercial premises where accessibility is a priority.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo", labelEn: "Type", value: "Elevador gran capacidad / High-capacity lift" },
+      { labelEs: "Uso", labelEn: "Use", value: "Intensivo residencial y comercial / Intensive residential & commercial" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "Gran capacidad de carga para uso intensivo", en: "High load capacity for intensive use" },
+      { es: "Apto para edificios residenciales y comerciales", en: "Suitable for residential and commercial buildings" },
+      { es: "Máxima fiabilidad y durabilidad", en: "Maximum reliability and durability" },
+      { es: "Certificado CE y normativa europea", en: "CE certified and European standards" },
+    ],
+    idealForEs: ["Edificios residenciales con varios vecinos", "Establecimientos comerciales", "Uso intensivo"],
+    idealForEn: ["Residential buildings with multiple residents", "Commercial premises", "Intensive use"],
+    pdfs: [],
+    brands: ["VIMEC"],
+    relatedSlugs: ["teorema", "epa-2000"],
+  },
+  {
+    id: "epa-1",
+    slug: "epa-1",
+    category: "verticalLifts",
+    nameEs: "Elevador Vertical Corta Altura EPA 1",
+    nameEn: "Short-Rise Vertical Lift EPA 1",
+    shortDescEs: "Elevador compacto para desniveles de hasta 1,5 metros. Sin foso.",
+    shortDescEn: "Compact lift for up to 1.5 metres height difference. No pit.",
+    longDescEs: "El EPA 1 es la solución ideal para superar desniveles de hasta 1,5 metros en interior o exterior sin necesidad de foso. Su instalación es rápida y sencilla, con mínimo impacto en la estructura existente.",
+    longDescEn: "The EPA 1 is the ideal solution for overcoming height differences of up to 1.5 metres indoors or outdoors without needing a pit. Installation is fast and simple, with minimal impact on existing structure.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Altura máxima", labelEn: "Max. rise", value: "1,5 m" },
+      { labelEs: "Foso", labelEn: "Pit", value: "No necesita / Not required" },
+      { labelEs: "Uso", labelEn: "Use", value: "Interior y exterior / Indoor & outdoor" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "Para desniveles hasta 1,5 metros sin foso", en: "For height differences up to 1.5 metres, no pit" },
+      { es: "Instalación rápida con mínimo impacto estructural", en: "Fast installation with minimal structural impact" },
+      { es: "Uso interior y exterior", en: "Indoor and outdoor use" },
+      { es: "Certificado CE", en: "CE certified" },
+    ],
+    idealForEs: ["Desniveles hasta 1,5 metros", "Sin posibilidad de foso", "Interior y exterior"],
+    idealForEn: ["Height differences up to 1.5 metres", "No pit possible", "Indoor and outdoor"],
+    pdfs: [],
+    brands: ["EPA"],
+    relatedSlugs: ["dizalo", "epa-2000"],
+  },
+  {
+    id: "epa-2000",
+    slug: "epa-2000",
+    category: "verticalLifts",
+    nameEs: "Elevador Vertical Gran Altura EPA 2000",
+    nameEn: "High-Rise Vertical Lift EPA 2000",
+    shortDescEs: "Elevador para grandes alturas. La alternativa al ascensor tradicional.",
+    shortDescEn: "Lift for great heights. The alternative to a traditional elevator.",
+    longDescEs: "El EPA 2000 es la alternativa real al ascensor tradicional para edificios de varias plantas. Puede salvar grandes alturas con una instalación mucho más sencilla y económica que un ascensor convencional, sin necesitar hueco de obra ni sala de máquinas tradicional.",
+    longDescEn: "The EPA 2000 is the real alternative to traditional elevators for multi-storey buildings. It can cover great heights with a much simpler and more economical installation than a conventional elevator, without needing a traditional shaft or machine room.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Tipo", labelEn: "Type", value: "Alternativa a ascensor / Elevator alternative" },
+      { labelEs: "Altura", labelEn: "Height", value: "Gran altura / High rise" },
+      { labelEs: "Sala de máquinas", labelEn: "Machine room", value: "No necesita / Not required" },
+      { labelEs: "Certificación", labelEn: "Certification", value: "CE · EU Norm" },
+    ],
+    features: [
+      { es: "Alternativa real al ascensor tradicional", en: "Real alternative to traditional elevator" },
+      { es: "Gran altura sin sala de máquinas", en: "High rise without machine room" },
+      { es: "Instalación más económica que ascensor convencional", en: "More economical installation than conventional elevator" },
+      { es: "Certificado CE y normativa europea de ascensores", en: "CE certified and European elevator standards" },
+    ],
+    idealForEs: ["Edificios de varias plantas sin ascensor", "Alternativa económica al ascensor", "Comunidades de vecinos"],
+    idealForEn: ["Multi-storey buildings without elevator", "Cost-effective elevator alternative", "Residential communities"],
+    pdfs: [],
+    brands: ["EPA"],
+    relatedSlugs: ["epa-1", "teorema"],
+  },
+  {
+    id: "se-p20",
+    slug: "se-p20",
+    category: "poolLift",
+    nameEs: "Grúa Silla Salvaescaleras Piscina SE-P20",
+    nameEn: "Hydraulic Pool Hoist SE-P20",
+    shortDescEs: "La solución más segura y económica para piscinas sin barreras. Funcionamiento hidráulico con agua.",
+    shortDescEn: "The safest and most economical solution for barrier-free pools. Water-powered hydraulic operation.",
+    longDescEs: "El elevador grúa de piscina SE-P20 te ofrece la solución más segura, fiable y económica para disfrutar de la piscina con total autonomía. Funciona mediante la presión del agua: sin necesidad de electricidad en la piscina. Solo necesitas anclar la base y conectar la manguera de agua. Profundidad de piscina requerida: 1,20-1,30 metros. Apto para hogares, hoteles y comunidades.",
+    longDescEn: "The SE-P20 pool hoist offers the safest, most reliable and most economical solution for independent pool access. Water-pressure operated — no poolside electricity needed. Simply anchor the base and connect the water hose. Required pool depth: 1.20-1.30 metres. Suitable for homes, hotels and communities.",
+    heroImage: "",
+    galleryImages: [],
+    specs: [
+      { labelEs: "Modelo", labelEn: "Model", value: "SE-P20" },
+      { labelEs: "Funcionamiento", labelEn: "Operation", value: "Hidráulico / Hydraulic (agua / water)" },
+      { labelEs: "Profundidad piscina", labelEn: "Pool depth", value: "1,20-1,30 m" },
+      { labelEs: "Instalación", labelEn: "Installation", value: "Sin obras / No construction" },
+      { labelEs: "Usos", labelEn: "Uses", value: "Hogares, hoteles, comunidades / Homes, hotels, communities" },
+    ],
+    features: [
+      { es: "Funcionamiento hidráulico: sin electricidad en la piscina", en: "Hydraulic operation: no poolside electricity" },
+      { es: "Instalación sencilla: anclar base y conectar manguera", en: "Simple installation: anchor base and connect hose" },
+      { es: "Apto para piscinas domésticas, hoteles y comunidades", en: "Suitable for home pools, hotels and communities" },
+      { es: "Profundidad de piscina requerida: 1,20-1,30 metros", en: "Required pool depth: 1.20-1.30 metres" },
+      { es: "Opción de ducha post-baño incluida", en: "Optional post-swim shower function included" },
+    ],
+    idealForEs: ["Piscinas domésticas", "Hoteles y comunidades", "Usuarios con movilidad reducida"],
+    idealForEn: ["Home pools", "Hotels and communities", "Users with limited mobility"],
+    pdfs: [
+      { type: "brochure", labelEs: "Folleto Grúa SE-P20", labelEn: "SE-P20 Pool Hoist Brochure", url: "/pdfs/grua-piscina-se-p20-folleto.pdf" },
+    ],
+    brands: ["SE"],
+  },
+]
+
+export function getProductsByCategory(category: ProductCategory): Product[] {
+  return products.filter((p) => p.category === category)
+}
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug)
+}
+
+export function getRelatedProducts(product: Product): Product[] {
+  if (!product.relatedSlugs?.length) return []
+  return product.relatedSlugs
+    .map((slug) => products.find((p) => p.slug === slug))
+    .filter((p): p is Product => Boolean(p))
+}

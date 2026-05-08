@@ -1,0 +1,325 @@
+{
+  "nav": {
+    "company": "About Us",
+    "products": "Products",
+    "stairlifts": "Stairlifts",
+    "platforms": "Platform Lifts",
+    "verticalLifts": "Vertical Lifts",
+    "poolLift": "Pool Hoist",
+    "ramps": "Ramps",
+    "installations": "Trusted Installations",
+    "branches": "Offices",
+    "resources": "Resources",
+    "contact": "Contact",
+    "requestQuote": "Get a Quote",
+    "freeCall": "Free Call"
+  },
+  "home": {
+    "hero": {
+      "badge": "Spain's Leader · 15+ Years of Experience",
+      "title": "Regain your freedom to move at home",
+      "subtitle": "Stairlifts, platform lifts and vertical lifts installed with full warranty. Free home visit in under 24 hours.",
+      "cta_quote": "Free Quote",
+      "cta_call": "900 100 133",
+      "promise1": "Visit in 24h",
+      "promise2": "No construction",
+      "promise3": "Installed in 3-5 days",
+      "certBadge": "CE certified products"
+    },
+    "categories": {
+      "title": "Our accessibility solutions",
+      "subtitle": "We find the ideal solution for your staircase, budget and needs.",
+      "stairlifts": {
+        "name": "Stairlifts",
+        "desc": "For straight and curved staircases. Indoor and outdoor models available.",
+        "from": "from €2,490"
+      },
+      "platforms": {
+        "name": "Platform Lifts",
+        "desc": "Ideal for wheelchair users. Maximum accessibility on any staircase.",
+        "from": "Ask for price"
+      },
+      "verticalLifts": {
+        "name": "Vertical Platform Lifts",
+        "desc": "The alternative to a traditional elevator. No construction needed.",
+        "from": "Ask for price"
+      },
+      "poolLift": {
+        "name": "Pool Hoist",
+        "desc": "Your pool without barriers. Hydraulic solution for everyone.",
+        "from": "Ask for price"
+      }
+    },
+    "process": {
+      "title": "Getting started is this easy",
+      "subtitle": "We take care of everything so you only have to enjoy your home.",
+      "step1": {
+        "title": "Call or write to us",
+        "desc": "Contact us without obligation. We advise you on your first call or email."
+      },
+      "step2": {
+        "title": "Free home visit in 24h",
+        "desc": "Our technician visits your home to assess the ideal solution."
+      },
+      "step3": {
+        "title": "Custom design",
+        "desc": "E-Survey measurement and tailor-made design for your staircase."
+      },
+      "step4": {
+        "title": "Installation & training",
+        "desc": "Installed in 3-5 days. We explain everything until you feel confident."
+      }
+    },
+    "trust": {
+      "title": "Why choose Solteva?",
+      "years": "15+ years experience",
+      "satisfied": "100% satisfied customers",
+      "brands": "95% of the market covered",
+      "coverage": "20+ provinces",
+      "certified": "CE certified products",
+      "service": "In-house technical service"
+    },
+    "testimonials": {
+      "title": "What our customers say",
+      "subtitle": "The satisfaction of every family is our best recommendation."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "How much does a stairlift cost?",
+      "a1": "The price varies depending on the model and installation complexity. Straight stairlifts start from €2,490. We offer financing from €38.91/month. Request a free quote and we'll give you an exact price within 24 hours.",
+      "q2": "How long does installation take?",
+      "a2": "A straight stairlift is installed in 3-5 days from order. Curved models take 3-4 weeks. Vertical lifts and curved platform lifts take between 4-8 weeks.",
+      "q3": "Do I need construction work at home?",
+      "a3": "No. Most of our solutions require no construction work. They are installed directly onto the existing staircase or floor.",
+      "q4": "What warranty comes with the products?",
+      "a4": "All our products include manufacturer's warranty. We also offer preventive maintenance contracts and in-house technical assistance.",
+      "q5": "Do you service other brands?",
+      "a5": "Yes. We carry out maintenance and repair for virtually all market brands: HANDICARE, MINIVATOR, FREELIFT, ACORN, THYSSEN, BISON, VIMEC and many more.",
+      "q6": "Do you offer financing?",
+      "a6": "Yes. We find the financing plan that best suits your situation. Monthly payments from €38.91/month."
+    },
+    "quickQuote": {
+      "title": "Get your quote in 24 hours",
+      "subtitle": "No obligation. An advisor will call you to find the best solution.",
+      "phone": "Your phone number",
+      "stairType": "Staircase type",
+      "stairTypeOptions": {
+        "straight": "Straight",
+        "curved": "Curved",
+        "outdoor": "Outdoor",
+        "unknown": "Not sure / I need guidance"
+      },
+      "province": "Province / Region",
+      "submit": "Get my free quote",
+      "legal": "By submitting you agree to our Privacy Policy. We only use your data to contact you."
+    },
+    "coverage": {
+      "title": "Service across your region",
+      "subtitle": "Own offices in Andalusia and service across 20+ provinces.",
+      "viewBranches": "See offices"
+    },
+    "brands": {
+      "title": "Authorized distributors of leading brands"
+    },
+    "cta": {
+      "title": "Ready to regain your independence?",
+      "subtitle": "Free quote · Home visit in 24h · Guaranteed installation",
+      "quote": "Request free quote",
+      "call": "Call now: 900 100 133"
+    }
+  },
+  "company": {
+    "hero": {
+      "title": "Experts in mobility solutions",
+      "subtitle": "Over 15 years helping families regain their independence."
+    },
+    "about": {
+      "title": "Who we are",
+      "p1": "Spain's leading company in the distribution, installation and maintenance of stairlifts, platform lifts, vertical elevators, pool hoists and ramps.",
+      "p2": "SOLTEVA ELEVACIÓN makes your life easier by installing your accessibility solution while offering the professionalism, safety, confidence and warranty that comes with being an authorized distributor of the world's best manufacturers.",
+      "p3": "All our products are ISO certified and carry the CE mark, meeting the strictest safety and quality requirements. Our technical team has qualified personnel with over 15 years of experience."
+    },
+    "services": {
+      "title": "Our services",
+      "financing": {
+        "title": "Tailored financing",
+        "desc": "We find the financing plan that best suits your financial situation. We handle all the paperwork to get you the right plan. Monthly payments from €38.91/month."
+      },
+      "consultation": {
+        "title": "Free initial consultation",
+        "desc": "From the first contact, our team of professionals guides you on the best solutions to eliminate your accessibility problem. Home visit in under 24 hours."
+      },
+      "installation": {
+        "title": "Fast and safe installation",
+        "desc": "We handle the entire process. Installation is carried out by our technical team with over 10 years of experience. Timelines: 3-5 days (straight), 3-4 weeks (curved), 4-8 weeks (lifts)."
+      },
+      "maintenance": {
+        "title": "Maintenance & after-sales",
+        "desc": "We offer preventive and corrective maintenance for virtually all market brands: HANDICARE, MINIVATOR, FREELIFT, THYSSEN, ACORN, BISON, VIMEC, HIROLIFT and many more."
+      }
+    },
+    "coverage": {
+      "title": "Coverage area",
+      "desc": "Málaga, Sevilla, Córdoba, Jaén, Huelva, Almería, Cádiz, Granada, Gibraltar, Murcia, Alicante, Valencia, Albacete, Cuenca, Toledo, Ciudad Real, Badajoz, Cáceres, Salamanca, Ávila, Segovia, Guadalajara and Madrid."
+    }
+  },
+  "products": {
+    "hub": {
+      "title": "Our products",
+      "subtitle": "The perfect accessibility solution for every staircase and every person."
+    },
+    "requestQuote": "Request quote",
+    "downloadBrochure": "Download brochure",
+    "downloadSpec": "Technical sheet",
+    "watchVideo": "Watch video",
+    "idealFor": "Ideal if...",
+    "notFor": "Not for you if...",
+    "specs": "Technical specifications",
+    "gallery": "Gallery",
+    "relatedProducts": "You may also like",
+    "compareTitle": "Compare models",
+    "financing": "Financing from",
+    "fromPrice": "From",
+    "getQuote": "Get exact price free",
+    "categories": {
+      "stairlifts": {
+        "title": "Stairlifts",
+        "subtitle": "The most economical and fastest solution for staircase problems. Available for straight, curved and outdoor staircases.",
+        "filterAll": "All",
+        "filterStraight": "Straight",
+        "filterCurved": "Curved",
+        "filterOutdoor": "Outdoor"
+      },
+      "platforms": {
+        "title": "Platform Lifts",
+        "subtitle": "The solution for wheelchair users or those with very limited mobility. More space and comfort on any staircase."
+      },
+      "verticalLifts": {
+        "title": "Vertical Platform Lifts",
+        "subtitle": "The alternative to a traditional elevator. No construction work, no machine room. Indoor or outdoor installation."
+      },
+      "ramps": {
+        "title": "Accessibility Ramps",
+        "subtitle": "Permanent and portable ramps to overcome small level changes safely and comfortably."
+      },
+      "poolLift": {
+        "title": "Pool Hoist",
+        "subtitle": "Your barrier-free pool. Hydraulic solution for private and communal pools. Installation on the pool edge without building work."
+      }
+    }
+  },
+  "installations": {
+    "title": "Trusted Installations",
+    "subtitle": "Thousands of families, businesses and institutions trust Solteva for their accessibility needs.",
+    "types": {
+      "publicOrgs": "Public Organisations",
+      "schools": "Schools",
+      "hotels": "Hotels",
+      "businesses": "Shops & Businesses",
+      "communities": "Residential Communities",
+      "homes": "Private Homes",
+      "pools": "Pool Installations"
+    }
+  },
+  "branches": {
+    "title": "Our Offices",
+    "subtitle": "In-house technical teams across Andalusia and service in 20+ provinces.",
+    "filterByProvince": "Filter by province",
+    "allProvinces": "All",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "howToGet": "Get directions",
+    "schedule": "Opening hours",
+    "scheduleValue": "Monday to Friday, 8:30 - 14:30",
+    "centralPhone": "National free line",
+    "nearestBranch": "Nearest office",
+    "coverage": "Coverage area"
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Free quote and home visit in under 24 hours.",
+    "form": {
+      "title": "Tell us about your situation",
+      "name": "Name*",
+      "address": "Address",
+      "city": "City / Town*",
+      "province": "Province",
+      "phone": "Phone*",
+      "email": "Email",
+      "howKnown": "How did you hear about us?",
+      "howKnownOptions": {
+        "google": "Google",
+        "recommendation": "Recommendation",
+        "facebook": "Facebook / Social Media",
+        "advertising": "Advertising",
+        "other": "Other"
+      },
+      "subject": "Subject",
+      "message": "Your message",
+      "messagePlaceholder": "Tell us about your staircase, the mobility challenge, or any question you have...",
+      "privacy": "I have read and accept the",
+      "privacyLink": "Privacy Policy",
+      "submit": "Send enquiry",
+      "submitting": "Sending...",
+      "successTitle": "Message received!",
+      "successDesc": "We will call you within 24 hours.",
+      "errorTitle": "Error sending",
+      "errorDesc": "Please try again or call us on 900 100 133."
+    },
+    "info": {
+      "phone": "900 100 133",
+      "phoneSub": "Free call",
+      "mobile": "628 342 179",
+      "email": "[email protected]",
+      "schedule": "Monday to Friday",
+      "scheduleHours": "8:30 - 14:30h",
+      "freeVisit": "Free home visit in 24h",
+      "noCommitment": "No obligation"
+    }
+  },
+  "privacy": {
+    "title": "Data Protection and Privacy Policy",
+    "lastUpdated": "Last updated: January 2026"
+  },
+  "footer": {
+    "tagline": "Stairlifts, lifts and platforms with 15 years of experience.",
+    "products": "Products",
+    "company_section": "Company",
+    "contact_section": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved.",
+    "developed": "Web design and development"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading...",
+    "error": "Error",
+    "required": "Required field",
+    "freeQuote": "Free Quote",
+    "callUs": "Call us",
+    "whatsapp": "WhatsApp",
+    "seeMore": "See more",
+    "download": "Download",
+    "from": "from",
+    "month": "month",
+    "years": "years",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "seo": {
+    "siteName": "Solteva Elevación",
+    "homeTitle": "Solteva Elevación — Stairlifts, Lifts & Platform Lifts in Spain",
+    "homeDesc": "Spain's leader in stairlifts, platform lifts, vertical elevators and pool hoists. 15+ years experience. Free home visit in 24h. No-obligation quote. 900 100 133.",
+    "companyTitle": "About Us — Solteva Elevación",
+    "companyDesc": "Learn about Solteva Elevación, Spain's leading accessibility company with 15+ years of experience. Authorized distributors of the best brands.",
+    "contactTitle": "Contact — Solteva Elevación",
+    "contactDesc": "Contact Solteva Elevación. Free quote, home visit in 24h. Tel: 900 100 133 (free). Monday to Friday 8:30-14:30."
+  }
+}

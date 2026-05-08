@@ -1,0 +1,325 @@
+{
+  "nav": {
+    "company": "Empresa",
+    "products": "Productos",
+    "stairlifts": "Sillas Salvaescaleras",
+    "platforms": "Plataformas Salvaescaleras",
+    "verticalLifts": "Elevadores Verticales",
+    "poolLift": "Grúa de Piscina",
+    "ramps": "Rampas",
+    "installations": "Instalaciones de Confianza",
+    "branches": "Delegaciones",
+    "resources": "Recursos",
+    "contact": "Contacto",
+    "requestQuote": "Pedir Presupuesto",
+    "freeCall": "Llamada Gratuita"
+  },
+  "home": {
+    "hero": {
+      "badge": "Líderes en España · +15 años de experiencia",
+      "title": "Recupera la libertad de moverte en tu hogar",
+      "subtitle": "Sillas salvaescaleras, plataformas y elevadores instalados con toda la garantía. Visita gratuita en menos de 24 horas.",
+      "cta_quote": "Presupuesto Gratis",
+      "cta_call": "900 100 133",
+      "promise1": "Visita en 24h",
+      "promise2": "Sin obras",
+      "promise3": "Instalación 3-5 días",
+      "certBadge": "Productos CE certificados"
+    },
+    "categories": {
+      "title": "Nuestras soluciones de accesibilidad",
+      "subtitle": "Encontramos la solución ideal para tu escalera, presupuesto y necesidades.",
+      "stairlifts": {
+        "name": "Sillas Salvaescaleras",
+        "desc": "Para escaleras rectas y curvas. Modelos interiores y exteriores.",
+        "from": "desde 2.490 €"
+      },
+      "platforms": {
+        "name": "Plataformas Salvaescaleras",
+        "desc": "Ideales para sillas de ruedas. Máxima accesibilidad en cualquier escalera.",
+        "from": "Consultar precio"
+      },
+      "verticalLifts": {
+        "name": "Elevadores Verticales",
+        "desc": "La alternativa al ascensor tradicional. Sin obras, sin sala de máquinas.",
+        "from": "Consultar precio"
+      },
+      "poolLift": {
+        "name": "Grúa de Piscina",
+        "desc": "Tu piscina sin barreras. Solución hidráulica para todos.",
+        "from": "Consultar precio"
+      }
+    },
+    "process": {
+      "title": "Así de fácil es empezar",
+      "subtitle": "Nos encargamos de todo para que tú solo te preocupes de disfrutar.",
+      "step1": {
+        "title": "Nos llamas o escribes",
+        "desc": "Contacta sin compromiso. Te asesoramos en tu primera llamada o email."
+      },
+      "step2": {
+        "title": "Visita gratuita en 24h",
+        "desc": "Nuestro técnico visita tu domicilio para estudiar la solución ideal."
+      },
+      "step3": {
+        "title": "Diseño personalizado",
+        "desc": "Medición con E-Survey y diseño a medida para tu escalera."
+      },
+      "step4": {
+        "title": "Instalación y formación",
+        "desc": "Instalamos en 3-5 días. Te explicamos todo hasta que te sientas seguro."
+      }
+    },
+    "trust": {
+      "title": "¿Por qué elegir Solteva?",
+      "years": "+15 años de experiencia",
+      "satisfied": "100% clientes satisfechos",
+      "brands": "95% del mercado cubierto",
+      "coverage": "+20 provincias",
+      "certified": "Productos CE certificados",
+      "service": "Servicio técnico propio"
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros clientes",
+      "subtitle": "La satisfacción de cada familia es nuestra mejor carta de presentación."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": "¿Cuánto cuesta una silla salvaescaleras?",
+      "a1": "El precio varía según el modelo y la complejidad de la instalación. Las sillas para escaleras rectas empiezan desde 2.490 €. Ofrecemos financiación desde 38,91 €/mes. Solicita presupuesto sin compromiso y te damos precio exacto en 24h.",
+      "q2": "¿Cuánto tarda la instalación?",
+      "a2": "Una silla recta se instala en 3-5 días desde el pedido. Las curvas a medida tardan 3-4 semanas. Los elevadores verticales y plataformas curvas, entre 4-8 semanas.",
+      "q3": "¿Necesito hacer obras en casa?",
+      "a3": "No. La mayoría de nuestras soluciones no requieren obras. Se instalan directamente sobre la escalera o el suelo existente.",
+      "q4": "¿Qué garantía tienen los productos?",
+      "a4": "Todos nuestros productos incluyen garantía de fabricante. Adicionalmente ofrecemos contratos de mantenimiento preventivo y asistencia técnica propia.",
+      "q5": "¿Hacéis mantenimiento de otras marcas?",
+      "a5": "Sí. Realizamos mantenimiento y reparación de prácticamente todas las marcas del mercado: HANDICARE, MINIVATOR, FREELIFT, ACORN, THYSSEN, BISON, VIMEC y muchas más.",
+      "q6": "¿Ofrecéis financiación?",
+      "a6": "Sí. Estudiamos el plan de financiación que mejor se adapte a tu situación. Podemos fraccionar el pago en cómodas mensualidades desde 38,91 €/mes."
+    },
+    "quickQuote": {
+      "title": "Recibe tu presupuesto en 24h",
+      "subtitle": "Sin compromiso. Un asesor te llamará para encontrar la mejor solución.",
+      "phone": "Tu teléfono",
+      "stairType": "Tipo de escalera",
+      "stairTypeOptions": {
+        "straight": "Recta",
+        "curved": "Curva",
+        "outdoor": "Exterior",
+        "unknown": "No sé / Necesito orientación"
+      },
+      "province": "Provincia",
+      "submit": "Quiero mi presupuesto gratis",
+      "legal": "Al enviar aceptas nuestra Política de Privacidad. Solo usamos tus datos para contactarte."
+    },
+    "coverage": {
+      "title": "Servicio en toda tu zona",
+      "subtitle": "Delegaciones propias en Andalucía y servicio en más de 20 provincias.",
+      "viewBranches": "Ver delegaciones"
+    },
+    "brands": {
+      "title": "Distribuidores autorizados de las mejores marcas"
+    },
+    "cta": {
+      "title": "¿Listo para recuperar tu independencia?",
+      "subtitle": "Presupuesto gratuito · Visita en 24h · Instalación garantizada",
+      "quote": "Solicitar presupuesto gratis",
+      "call": "Llamar ahora: 900 100 133"
+    }
+  },
+  "company": {
+    "hero": {
+      "title": "Expertos en soluciones de movilidad",
+      "subtitle": "Más de 15 años ayudando a familias a recuperar su independencia."
+    },
+    "about": {
+      "title": "Quiénes somos",
+      "p1": "Empresa líder en España, contamos con una contrastada experiencia en la distribución, instalación y mantenimiento de sillas salvaescaleras, plataformas salvaescaleras, elevador vertical, grúa de piscina y rampas.",
+      "p2": "SOLTEVA ELEVACIÓN le facilita la vida instalando su solución de accesibilidad a la vez que le ofrece la profesionalidad, seguridad, confianza y garantía que supone ser distribuidores de los mejores fabricantes a nivel mundial.",
+      "p3": "Todos nuestros productos están homologados con certificado ISO y cuentan con el certificado CE, por lo que cumplen con los más estrictos requisitos y controles en seguridad y calidad. Nuestro equipo técnico cuenta con personal cualificado con más de 15 años de experiencia."
+    },
+    "services": {
+      "title": "Nuestros servicios",
+      "financing": {
+        "title": "Financiación a tu medida",
+        "desc": "Buscamos la financiación que mejor se adapte a tu situación económica. Te ayudamos en todas las gestiones para acceder al plan de financiación adecuado a tus necesidades. Cuotas desde 38,91 €/mes."
+      },
+      "consultation": {
+        "title": "Asesoramiento inicial gratuito",
+        "desc": "Desde el primer momento, nuestro equipo de profesionales te orienta sobre las diferentes soluciones para eliminar tu problema de accesibilidad. Visita en domicilio en menos de 24 horas."
+      },
+      "installation": {
+        "title": "Instalación rápida y segura",
+        "desc": "Nos encargamos de todo el proceso. La instalación es llevada a cabo por nuestro servicio técnico con más de 10 años de experiencia. Plazos: 3-5 días (recta), 3-4 semanas (curva), 4-8 semanas (elevadores)."
+      },
+      "maintenance": {
+        "title": "Mantenimiento y postventa",
+        "desc": "Ofrecemos mantenimiento preventivo y correctivo para prácticamente todas las marcas del mercado: HANDICARE, MINIVATOR, FREELIFT, THYSSEN, ACORN, BISON, VIMEC, HIROLIFT y muchas más."
+      }
+    },
+    "coverage": {
+      "title": "Área de cobertura",
+      "desc": "Málaga, Sevilla, Córdoba, Jaén, Huelva, Almería, Cádiz, Granada, Gibraltar, Murcia, Alicante, Valencia, Albacete, Cuenca, Toledo, Ciudad Real, Badajoz, Cáceres, Salamanca, Ávila, Segovia, Guadalajara y Madrid."
+    }
+  },
+  "products": {
+    "hub": {
+      "title": "Nuestros productos",
+      "subtitle": "La solución de accesibilidad perfecta para cada escalera y cada persona."
+    },
+    "requestQuote": "Solicitar presupuesto",
+    "downloadBrochure": "Descargar folleto",
+    "downloadSpec": "Ficha técnica",
+    "watchVideo": "Ver vídeo",
+    "idealFor": "Ideal si...",
+    "notFor": "No es para ti si...",
+    "specs": "Especificaciones técnicas",
+    "gallery": "Galería",
+    "relatedProducts": "También te puede interesar",
+    "compareTitle": "Comparar modelos",
+    "financing": "Financiación desde",
+    "fromPrice": "Desde",
+    "getQuote": "Obtener precio exacto gratis",
+    "categories": {
+      "stairlifts": {
+        "title": "Sillas Salvaescaleras",
+        "subtitle": "La forma más económica y rápida de resolver el problema de las escaleras. Disponibles para escaleras rectas, curvas e incluso exteriores.",
+        "filterAll": "Todas",
+        "filterStraight": "Rectas",
+        "filterCurved": "Curvas",
+        "filterOutdoor": "Exterior"
+      },
+      "platforms": {
+        "title": "Plataformas Salvaescaleras",
+        "subtitle": "La solución para usuarios de silla de ruedas o con movilidad muy reducida. Mayor espacio y confort en cualquier tipo de escalera."
+      },
+      "verticalLifts": {
+        "title": "Elevadores Verticales",
+        "subtitle": "La alternativa al ascensor tradicional. Sin obras, sin sala de máquinas. Instalación interior o exterior."
+      },
+      "ramps": {
+        "title": "Rampas de Accesibilidad",
+        "subtitle": "Rampas de obra y portátiles para superar pequeños desniveles de forma segura y cómoda."
+      },
+      "poolLift": {
+        "title": "Grúa de Piscina",
+        "subtitle": "Tu piscina sin barreras. Solución hidráulica para piscinas privadas y comunitarias. Instalación sobre el bordillo sin obras."
+      }
+    }
+  },
+  "installations": {
+    "title": "Instalaciones de Confianza",
+    "subtitle": "Miles de familias, empresas e instituciones confían en Solteva para sus soluciones de accesibilidad.",
+    "types": {
+      "publicOrgs": "Organismos Públicos",
+      "schools": "Colegios",
+      "hotels": "Hoteles",
+      "businesses": "Locales y Comercios",
+      "communities": "Comunidades de Vecinos",
+      "homes": "Casas Particulares",
+      "pools": "Instalaciones de Piscina"
+    }
+  },
+  "branches": {
+    "title": "Delegaciones",
+    "subtitle": "Equipos técnicos propios en toda Andalucía y servicio en más de 20 provincias.",
+    "filterByProvince": "Filtrar por provincia",
+    "allProvinces": "Todas",
+    "phone": "Teléfono",
+    "email": "Email",
+    "address": "Dirección",
+    "howToGet": "Cómo llegar",
+    "schedule": "Horario",
+    "scheduleValue": "Lunes a viernes, 8:30 - 14:30",
+    "centralPhone": "Línea gratuita nacional",
+    "nearestBranch": "Delegación más cercana",
+    "coverage": "Zona de cobertura"
+  },
+  "contact": {
+    "title": "Contacta con nosotros",
+    "subtitle": "Presupuesto gratuito y visita en menos de 24 horas.",
+    "form": {
+      "title": "Cuéntanos tu situación",
+      "name": "Nombre*",
+      "address": "Dirección",
+      "city": "Localidad*",
+      "province": "Provincia",
+      "phone": "Teléfono*",
+      "email": "Email",
+      "howKnown": "¿Cómo nos ha conocido?",
+      "howKnownOptions": {
+        "google": "Google",
+        "recommendation": "Recomendación",
+        "facebook": "Facebook / Redes Sociales",
+        "advertising": "Publicidad",
+        "other": "Otro"
+      },
+      "subject": "Asunto",
+      "message": "Tu mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tu escalera, el tipo de problema de movilidad, o cualquier pregunta que tengas...",
+      "privacy": "He leído y acepto la",
+      "privacyLink": "Política de Privacidad",
+      "submit": "Enviar consulta",
+      "submitting": "Enviando...",
+      "successTitle": "¡Mensaje recibido!",
+      "successDesc": "Te llamaremos en menos de 24 horas.",
+      "errorTitle": "Error al enviar",
+      "errorDesc": "Por favor, inténtalo de nuevo o llámanos al 900 100 133."
+    },
+    "info": {
+      "phone": "900 100 133",
+      "phoneSub": "Llamada gratuita",
+      "mobile": "628 342 179",
+      "email": "[email protected]",
+      "schedule": "Lunes a viernes",
+      "scheduleHours": "8:30 - 14:30h",
+      "freeVisit": "Visita gratuita en 24h",
+      "noCommitment": "Sin compromiso"
+    }
+  },
+  "privacy": {
+    "title": "Política de Protección de Datos y Privacidad",
+    "lastUpdated": "Última actualización: enero 2026"
+  },
+  "footer": {
+    "tagline": "Sillas salvaescaleras, elevadores y plataformas con 15 años de experiencia.",
+    "products": "Productos",
+    "company_section": "Empresa",
+    "contact_section": "Contacto",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "rights": "Todos los derechos reservados.",
+    "developed": "Diseño y desarrollo web"
+  },
+  "common": {
+    "learnMore": "Saber más",
+    "viewAll": "Ver todos",
+    "close": "Cerrar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "loading": "Cargando...",
+    "error": "Error",
+    "required": "Campo obligatorio",
+    "freeQuote": "Presupuesto Gratis",
+    "callUs": "Llámanos",
+    "whatsapp": "WhatsApp",
+    "seeMore": "Ver más",
+    "download": "Descargar",
+    "from": "desde",
+    "month": "mes",
+    "years": "años",
+    "phone": "Teléfono",
+    "email": "Email"
+  },
+  "seo": {
+    "siteName": "Solteva Elevación",
+    "homeTitle": "Solteva Elevación — Sillas Salvaescaleras, Elevadores y Plataformas",
+    "homeDesc": "Líderes en España en sillas salvaescaleras, plataformas, elevadores verticales y grúas de piscina. +15 años de experiencia. Visita gratuita en 24h. Presupuesto sin compromiso. 900 100 133.",
+    "companyTitle": "Empresa — Solteva Elevación",
+    "companyDesc": "Conoce a Solteva Elevación, empresa líder en España con +15 años de experiencia en accesibilidad y movilidad. Distribuidores autorizados de las mejores marcas.",
+    "contactTitle": "Contacto — Solteva Elevación",
+    "contactDesc": "Contacta con Solteva Elevación. Presupuesto gratuito, visita en 24h. Tel: 900 100 133 (gratuito). Lunes a viernes 8:30-14:30."
+  }
+}
