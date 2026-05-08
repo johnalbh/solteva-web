@@ -1,9 +1,11 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, ChevronRight, ImageOff, CheckCircle2 } from "lucide-react";
+import { Phone, ChevronRight, ImageOff, CheckCircle2, Shield, CreditCard } from "lucide-react";
 import { generateSEOMeta } from "@/lib/seo";
 import { getProductsByCategory } from "@/lib/products";
+import SubsidiesStrip from "@/components/shared/SubsidiesStrip";
+import FAQAccordion from "@/components/home/FAQAccordion";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -16,8 +18,8 @@ export async function generateMetadata({ params }: Props) {
         : "Pool Hoist — Barrier-Free Pool Access | Solteva",
     description:
       locale === "es"
-        ? "Grúa hidráulica para piscina privada y comunitaria. Instalación sin obras. Visita gratuita en 24h. 900 100 133."
-        : "Hydraulic pool hoist for private and communal pools. No building work. Free visit in 24h. 900 100 133.",
+        ? "Grúa hidráulica para piscina privada y comunitaria. Sin electricidad cerca del agua. Instalación sin obras. Visita gratuita en 24h. 900 100 133."
+        : "Hydraulic pool hoist for private and communal pools. No electricity near the water. No building work. Free visit in 24h. 900 100 133.",
     locale,
     path: "/productos/grua-piscina",
   });
@@ -32,17 +34,53 @@ export default async function GruaPiscinaPage({ params }: Props) {
   const features = es
     ? [
         "Sistema hidráulico: sin electricidad cerca del agua",
-        "Instalación sobre el bordillo, sin obras",
+        "Instalación sobre el bordillo, sin obras ni permisos",
         "Giro 90° o 360° según modelo",
         "Capacidad hasta 136 kg",
-        "Acero inoxidable resistente al cloro",
+        "Acero inoxidable resistente al cloro y UV",
+        "Cumple normativa de accesibilidad en piscinas públicas",
       ]
     : [
         "Hydraulic system: no electricity near the water",
-        "Installed on pool edge, no construction needed",
+        "Installed on pool edge, no construction or permits needed",
         "90° or 360° rotation depending on model",
         "Capacity up to 136 kg",
-        "Chlorine-resistant stainless steel",
+        "Chlorine and UV-resistant stainless steel",
+        "Meets accessibility regulations for public pools",
+      ];
+
+  const poolTypes = es
+    ? [
+        {
+          titleEs: "Piscina privada",
+          descEs: "En vivienda particular. Sin obras, sin permisos. Instalación en 1 día. Puede almacenarse fuera de temporada.",
+          tagEs: "Sin obras",
+          color: "rgba(0,155,170,0.08)",
+          textColor: "rgb(0,130,145)",
+        },
+        {
+          titleEs: "Comunidad de propietarios",
+          descEs: "Para cumplir la normativa de accesibilidad en piscinas comunitarias. Instalación profesional certificada.",
+          tagEs: "Normativa cumplida",
+          color: "rgba(0,113,227,0.07)",
+          textColor: "rgb(0,113,227)",
+        },
+      ]
+    : [
+        {
+          titleEs: "Private pool",
+          descEs: "For private homes. No construction, no permits. Installed in 1 day. Can be stored out of season.",
+          tagEs: "No building work",
+          color: "rgba(0,155,170,0.08)",
+          textColor: "rgb(0,130,145)",
+        },
+        {
+          titleEs: "Community pool",
+          descEs: "To comply with accessibility regulations for communal pools. Certified professional installation.",
+          tagEs: "Regulation compliant",
+          color: "rgba(0,113,227,0.07)",
+          textColor: "rgb(0,113,227)",
+        },
       ];
 
   return (
@@ -74,13 +112,32 @@ export default async function GruaPiscinaPage({ params }: Props) {
             {es ? "Grúa de Piscina" : "Pool Hoist"}
           </h1>
           <p
-            className="text-ink-secondary"
+            className="text-ink-secondary mb-6"
             style={{ fontSize: "1.05rem", lineHeight: 1.47, letterSpacing: "-0.016em", maxWidth: "52ch" }}
           >
             {es
-              ? "Tu piscina sin barreras. Solución hidráulica elegante para piscinas privadas y comunitarias."
-              : "Your barrier-free pool. Elegant hydraulic solution for private and communal pools."}
+              ? "Tu piscina sin barreras. Solución hidráulica elegante para piscinas privadas y comunitarias. Sin electricidad junto al agua."
+              : "Your barrier-free pool. Elegant hydraulic solution for private and communal pools. No electricity near the water."}
           </p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { iconEl: <Shield size={13} aria-hidden />, textEs: "Garantía 1 año", textEn: "1-year warranty" },
+              { iconEl: <CreditCard size={13} aria-hidden />, textEs: "Instalación en 1 día", textEn: "Installed in 1 day" },
+            ].map((badge) => (
+              <span
+                key={badge.textEs}
+                className="inline-flex items-center gap-1.5"
+                style={{
+                  fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.02em",
+                  color: "rgb(0,130,145)", background: "rgba(0,155,170,0.1)",
+                  borderRadius: 980, padding: "5px 12px",
+                }}
+              >
+                {badge.iconEl}
+                {es ? badge.textEs : badge.textEn}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -159,13 +216,60 @@ export default async function GruaPiscinaPage({ params }: Props) {
               <ul style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 {features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="shrink-0 mt-0.5" style={{ color: "var(--cta-blue)" }} aria-hidden />
+                    <CheckCircle2 size={18} className="shrink-0 mt-0.5" style={{ color: "rgb(0,130,145)" }} aria-hidden />
                     <span style={{ fontSize: "0.95rem", lineHeight: 1.5, color: "rgb(29,29,31)" }}>{f}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Pool type segmentation */}
+      <section className="section-py" style={{ background: "#fff" }}>
+        <div className="max-w-[1260px] mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-10">
+            <p className="eyebrow mb-3">{es ? "¿Para qué tipo de piscina?" : "What type of pool?"}</p>
+            <h2
+              className="text-ink"
+              style={{ fontSize: "clamp(1.5rem, 2.4vw, 2.1rem)", fontWeight: 600, letterSpacing: "-0.02em" }}
+            >
+              {es ? "Soluciones para cada caso" : "Solutions for every case"}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: 16, maxWidth: 740, margin: "0 auto" }}>
+            {poolTypes.map((type) => (
+              <div key={type.titleEs} style={{ borderRadius: 20, padding: "28px 24px", background: type.color }}>
+                <span style={{ display: "inline-block", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: type.textColor, marginBottom: 12 }}>
+                  {type.tagEs}
+                </span>
+                <h3 style={{ fontSize: "1.1rem", fontWeight: 600, letterSpacing: "-0.018em", color: "rgb(29,29,31)", marginBottom: 10 }}>
+                  {type.titleEs}
+                </h3>
+                <p style={{ fontSize: "0.875rem", lineHeight: 1.55, color: "rgb(110,110,115)" }}>
+                  {type.descEs}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Subsidies */}
+      <section className="section-py" style={{ background: "rgb(245,245,247)" }}>
+        <div className="max-w-[1260px] mx-auto px-5 sm:px-8 lg:px-12">
+          <SubsidiesStrip locale={locale} />
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section-py" style={{ background: "#fff" }}>
+        <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12">
+          <FAQAccordion
+            ids={["obras-necesarias", "garantia", "financiacion", "permisos-licencias"]}
+            title={es ? "Preguntas frecuentes sobre grúas de piscina" : "Frequently asked questions about pool hoists"}
+          />
         </div>
       </section>
 
@@ -184,18 +288,10 @@ export default async function GruaPiscinaPage({ params }: Props) {
               : "We visit and study the best solution for your pool, with no commitment."}
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link
-              href={`/${locale}/contacto`}
-              className="btn-pill"
-              style={{ background: "var(--cta-blue)", color: "#fff" }}
-            >
+            <Link href={`/${locale}/contacto`} className="btn-pill" style={{ background: "var(--cta-blue)", color: "#fff" }}>
               {es ? "Pedir presupuesto gratis" : "Request free quote"}
             </Link>
-            <a
-              href="tel:+34900100133"
-              className="btn-pill flex items-center gap-2"
-              style={{ background: "rgba(255,255,255,0.1)", color: "#fff" }}
-            >
+            <a href="tel:+34900100133" className="btn-pill flex items-center gap-2" style={{ background: "rgba(255,255,255,0.1)", color: "#fff" }}>
               <Phone size={15} aria-hidden />
               900 100 133
             </a>

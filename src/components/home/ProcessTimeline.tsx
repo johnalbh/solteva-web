@@ -27,14 +27,14 @@ export default async function ProcessTimeline({ locale }: Props) {
       </div>
 
       {/* Steps */}
-      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8" aria-label={locale === "es" ? "Pasos del proceso" : "Process steps"}>
+      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8" aria-label={locale === "es" ? "Pasos del proceso" : "Process steps"}>
         {STEPS.map((key, index) => (
-          <li key={key} className="flex flex-col">
+          <li key={key} className="flex flex-col items-center text-center sm:items-start sm:text-left">
             {/* Number */}
             <span
-              className="block mb-6 font-bold select-none"
+              className="block mb-5 font-bold select-none"
               style={{
-                fontSize: "4.5rem",
+                fontSize: "4rem",
                 lineHeight: 1,
                 letterSpacing: "-0.05em",
                 color: "var(--primary)",
@@ -47,7 +47,7 @@ export default async function ProcessTimeline({ locale }: Props) {
 
             {/* Step line — desktop */}
             <div
-              className="hidden lg:block h-px mb-8"
+              className="hidden lg:block h-px mb-8 w-full"
               style={{ background: "var(--border)" }}
               aria-hidden
             />
@@ -60,7 +60,6 @@ export default async function ProcessTimeline({ locale }: Props) {
             </h3>
             <p
               className="text-muted-foreground text-sm leading-relaxed"
-              style={{ maxWidth: "22ch" }}
             >
               {t(`${key}.desc` as `${typeof key}.desc`)}
             </p>

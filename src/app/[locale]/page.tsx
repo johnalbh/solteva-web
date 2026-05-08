@@ -12,6 +12,7 @@ import FinancingCalculator from "@/components/home/FinancingCalculator";
 import ProductConfigurator from "@/components/home/ProductConfigurator";
 import ProyectosTeaser from "@/components/home/ProyectosTeaser";
 import ServiciosStrip from "@/components/home/ServiciosStrip";
+import ProductFinder from "@/components/home/ProductFinder";
 import FadeIn from "@/components/shared/FadeIn";
 
 interface PageProps {
@@ -47,8 +48,17 @@ export default async function HomePage({ params }: PageProps) {
       {/* 1. Hero — full viewport, cinematic */}
       <Hero locale={locale} />
 
-      {/* 2. Product lineup */}
+      {/* 2. Product finder — interactive wizard */}
       <section className="section-py-lg" style={{ background: "var(--surface-1)" }}>
+        <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-16">
+          <FadeIn>
+            <ProductFinder locale={locale} />
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 3. Product lineup — full catalogue */}
+      <section className="section-py-lg" style={{ background: "var(--surface-2)" }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <FadeIn>
             <ProductCategoryGrid locale={locale} />
@@ -56,12 +66,12 @@ export default async function HomePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 3. Trust stats — dark section */}
+      {/* 4. Trust stats — dark section */}
       <FadeIn>
         <TrustStrip locale={locale} />
       </FadeIn>
 
-      {/* 4. Process — white */}
+      {/* 5. Process — white */}
       <section className="section-py-lg" style={{ background: "var(--surface-1)" }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <FadeIn>
