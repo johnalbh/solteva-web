@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import StickyContactBar from "@/components/layout/StickyContactBar";
-import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import FloatingActions from "@/components/shared/FloatingActions";
 import ExitIntentModal from "@/components/shared/ExitIntentModal";
 import CookieBanner from "@/components/shared/CookieBanner";
 import type { Metadata } from "next";
@@ -49,8 +48,7 @@ export default async function LocaleLayout({
         {children}
       </main>
       <Footer />
-      <StickyContactBar />
-      <WhatsAppButton />
+      <FloatingActions />
       <ExitIntentModal locale={locale} />
       <CookieBanner locale={locale} />
     </NextIntlClientProvider>

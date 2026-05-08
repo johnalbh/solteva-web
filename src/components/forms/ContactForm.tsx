@@ -4,26 +4,18 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import Link from "next/link";
-import { CheckCircle, AlertCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
+import { CheckCircle2, AlertCircle, Phone } from "lucide-react";
 
 const schema = z.object({
-  name: z.string().optional(),
-  address: z.string().optional(),
-  city: z.string().min(2, "Campo obligatorio"),
-  province: z.string().optional(),
-  phone: z.string().min(9, "Teléfono inválido").max(20),
+  name: z.string().min(2, "Nombre obligatorio"),
+  phone: z.string().min(9, "Teléfono inválido"),
   email: z.string().email("Email inválido").optional().or(z.literal("")),
-  howKnown: z.string().optional(),
+  city: z.string().min(2, "Ciudad obligatoria"),
   subject: z.string().optional(),
   message: z.string().optional(),
-  privacy: z.boolean().refine((v) => v, "Debes aceptar la política de privacidad"),
+  privacy: z.boolean().refine((v) => v, "Requerido"),
   honeypot: z.string().max(0).optional(),
 });
 
@@ -31,7 +23,7 @@ type FormData = z.infer<typeof schema>;
 
 export default function ContactForm() {
   const locale = useLocale();
-  const t = useTranslations("contact.form");
+  const es = locale === "es";
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const {
@@ -39,9 +31,7 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<FormData>({
-    resolver: zodResolver(schema),
-  });
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   async function onSubmit(data: FormData) {
     try {
@@ -60,185 +50,164 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
-        <CheckCircle size={56} className="text-[var(--success)]" aria-hidden />
-        <h3 className="font-display text-2xl font-bold text-ink">{t("successTitle")}</h3>
-        <p className="text-muted-foreground">{t("successDesc")}</p>
-        <button
-          onClick={() => setStatus("idle")}
-          className="text-[var(--primary)] font-semibold hover:underline text-sm mt-2"
-        >
-          {locale === "es" ? "Enviar otro mensaje" : "Send another message"}
+      <div style={{ textAlign: "center", padding: "48px 24px" }}>
+        <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(52,199,89,0.1)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
+          <CheckCircle2 size={36} style={{ color: "rgb(52,199,89)" }} aria-hidden />
+        </div>
+        <h3 style={{ fontSize: "1.3rem", fontWeight: 600, letterSpacing: "-0.02em", color: "rgb(29,29,31)", marginBottom: 10 }}>
+          {es ? "¡Mensaje enviado!" : "Message sent!"}
+        </h3>
+        <p style={{ fontSize: "0.95rem", lineHeight: 1.5, color: "rgb(110,110,115)", marginBottom: 28 }}>
+          {es
+            ? "Nuestro equipo te contactará en menos de 24 horas. También puedes llamarnos ahora:"
+            : "Our team will contact you within 24 hours. You can also call us now:"}
+        </p>
+        <a href="tel:+34900100133" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgb(245,245,247)", color: "rgb(29,29,31)", borderRadius: 980, padding: "12px 24px", fontSize: "1rem", fontWeight: 600, letterSpacing: "-0.014em", textDecoration: "none" }}>
+          <Phone size={16} aria-hidden /> 900 100 133
+        </a>
+        <button onClick={() => setStatus("idle")} style={{ display: "block", margin: "16px auto 0", background: "none", border: "none", fontSize: "0.85rem", color: "rgb(134,134,139)", cursor: "pointer", letterSpacing: "-0.01em" }}>
+          {es ? "Enviar otro mensaje" : "Send another message"}
         </button>
       </div>
     );
   }
 
-  const howKnownOptions = [
-    { value: "google", label: t("howKnownOptions.google") },
-    { value: "recommendation", label: t("howKnownOptions.recommendation") },
-    { value: "facebook", label: t("howKnownOptions.facebook") },
-    { value: "advertising", label: t("howKnownOptions.advertising") },
-    { value: "other", label: t("howKnownOptions.other") },
-  ];
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
-      {/* Honeypot */}
-      <input
-        type="text"
-        {...register("honeypot")}
-        className="hidden"
-        tabIndex={-1}
-        autoComplete="off"
-        aria-hidden
+    <form onSubmit={handleSubmit(onSubmit)} noValidate style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <input type="text" {...register("honeypot")} style={{ display: "none" }} tabIndex={-1} autoComplete="off" aria-hidden />
+
+      {/* Name + Phone */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+        <AppleField
+          label={es ? "Nombre *" : "Name *"}
+          error={errors.name?.message}
+          inputProps={{ ...register("name"), type: "text", placeholder: es ? "Tu nombre" : "Your name", autoComplete: "name" }}
+        />
+        <AppleField
+          label={es ? "Teléfono *" : "Phone *"}
+          error={errors.phone?.message}
+          inputProps={{ ...register("phone"), type: "tel", placeholder: "600 000 000", autoComplete: "tel" }}
+        />
+      </div>
+
+      {/* Email + City */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+        <AppleField
+          label="Email"
+          error={errors.email?.message}
+          inputProps={{ ...register("email"), type: "email", placeholder: "correo@ejemplo.com", autoComplete: "email" }}
+        />
+        <AppleField
+          label={es ? "Ciudad *" : "City *"}
+          error={errors.city?.message}
+          inputProps={{ ...register("city"), type: "text", placeholder: es ? "Tu ciudad" : "Your city", autoComplete: "address-level2" }}
+        />
+      </div>
+
+      {/* Subject */}
+      <AppleField
+        label={es ? "Asunto" : "Subject"}
+        error={errors.subject?.message}
+        inputProps={{ ...register("subject"), type: "text", placeholder: es ? "Ej: Presupuesto silla salvaescaleras recta" : "E.g.: Quote for straight stairlift" }}
       />
 
-      <div className="grid sm:grid-cols-2 gap-5">
-        <Field label={t("name")} error={errors.name?.message}>
-          <Input
-            {...register("name")}
-            placeholder={locale === "es" ? "Tu nombre" : "Your name"}
-            className={cn(errors.name && "border-destructive")}
-          />
-        </Field>
-        <Field label={t("phone")} error={errors.phone?.message} required>
-          <Input
-            {...register("phone")}
-            type="tel"
-            placeholder="900 100 133"
-            aria-required
-            className={cn(errors.phone && "border-destructive")}
-          />
-        </Field>
-      </div>
-
-      <div className="grid sm:grid-cols-2 gap-5">
-        <Field label={t("city")} error={errors.city?.message} required>
-          <Input
-            {...register("city")}
-            placeholder={locale === "es" ? "Tu ciudad" : "Your city"}
-            aria-required
-            className={cn(errors.city && "border-destructive")}
-          />
-        </Field>
-        <Field label={t("province")} error={errors.province?.message}>
-          <Input
-            {...register("province")}
-            placeholder={locale === "es" ? "Provincia" : "Province"}
-          />
-        </Field>
-      </div>
-
-      <Field label={t("email")} error={errors.email?.message}>
-        <Input
-          {...register("email")}
-          type="email"
-          placeholder="correo@ejemplo.com"
-          className={cn(errors.email && "border-destructive")}
-        />
-      </Field>
-
-      <Field label={t("howKnown")} error={errors.howKnown?.message}>
-        <select
-          {...register("howKnown")}
-          className="w-full h-12 rounded-lg border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        >
-          <option value="">{locale === "es" ? "Seleccionar..." : "Select..."}</option>
-          {howKnownOptions.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-      </Field>
-
-      <Field label={t("subject")} error={errors.subject?.message}>
-        <Input
-          {...register("subject")}
-          placeholder={
-            locale === "es"
-              ? "Ej: Presupuesto silla salvaescaleras"
-              : "E.g.: Quote for stairlift"
-          }
-        />
-      </Field>
-
-      <Field label={t("message")} error={errors.message?.message}>
-        <Textarea
+      {/* Message */}
+      <div>
+        <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 600, color: "rgb(110,110,115)", letterSpacing: "-0.01em", marginBottom: 6 }}>
+          {es ? "Mensaje" : "Message"}
+        </label>
+        <textarea
           {...register("message")}
-          placeholder={t("messagePlaceholder")}
           rows={4}
-          className="resize-none"
+          placeholder={es
+            ? "Cuéntanos tu situación: tipo de escalera, número de plantas, si conviven personas mayores…"
+            : "Tell us your situation: staircase type, number of floors, elderly residents…"}
+          style={{
+            width: "100%", borderRadius: 14, border: "1.5px solid rgb(232,232,237)",
+            background: "rgb(245,245,247)", padding: "14px 16px",
+            fontSize: "0.95rem", letterSpacing: "-0.012em", color: "rgb(29,29,31)",
+            outline: "none", resize: "vertical", fontFamily: "inherit",
+            lineHeight: 1.5, boxSizing: "border-box",
+            transition: "border-color 0.18s, background 0.18s",
+          }}
+          onFocus={(e) => { e.currentTarget.style.borderColor = "var(--cta-blue)"; e.currentTarget.style.background = "#fff"; }}
+          onBlur={(e) => { e.currentTarget.style.borderColor = "rgb(232,232,237)"; e.currentTarget.style.background = "rgb(245,245,247)"; }}
         />
-      </Field>
+      </div>
 
-      {/* Privacy consent */}
-      <div className="flex items-start gap-3">
+      {/* Privacy */}
+      <label style={{ display: "flex", alignItems: "flex-start", gap: 10, cursor: "pointer" }}>
         <input
           type="checkbox"
-          id="privacy"
           {...register("privacy")}
-          className="mt-1 h-4 w-4 rounded border-border accent-[var(--primary)]"
-          aria-required
+          style={{ marginTop: 3, width: 18, height: 18, accentColor: "var(--cta-blue)", flexShrink: 0, cursor: "pointer" }}
         />
-        <label htmlFor="privacy" className="text-sm text-muted-foreground leading-snug">
-          {t("privacy")}{" "}
-          <Link
-            href={`/${locale}/politica-privacidad`}
-            className="text-[var(--primary)] underline hover:no-underline"
-          >
-            {t("privacyLink")}
+        <span style={{ fontSize: "0.82rem", lineHeight: 1.5, color: "rgb(110,110,115)" }}>
+          {es ? "Acepto la " : "I accept the "}
+          <Link href={`/${locale}/politica-privacidad`} style={{ color: "var(--cta-blue)", textDecoration: "underline" }}>
+            {es ? "política de privacidad" : "privacy policy"}
           </Link>
-        </label>
-      </div>
+          {es ? " y consiento el tratamiento de mis datos." : " and consent to processing of my data."}
+        </span>
+      </label>
       {errors.privacy && (
-        <p className="text-destructive text-sm flex items-center gap-1">
-          <AlertCircle size={14} />
-          {errors.privacy.message}
+        <p style={{ display: "flex", alignItems: "center", gap: 6, fontSize: "0.82rem", color: "rgb(255,59,48)", marginTop: -8 }}>
+          <AlertCircle size={13} aria-hidden /> {errors.privacy.message}
         </p>
       )}
 
+      {/* API error */}
       {status === "error" && (
-        <div className="flex items-center gap-2 text-destructive text-sm bg-destructive/10 rounded-lg px-4 py-3">
-          <AlertCircle size={16} />
-          {t("errorDesc")}
+        <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "0.88rem", color: "rgb(255,59,48)", background: "rgba(255,59,48,0.07)", borderRadius: 12, padding: "12px 16px" }}>
+          <AlertCircle size={16} aria-hidden />
+          {es ? "Error al enviar. Inténtalo de nuevo o llama al 900 100 133." : "Error sending. Try again or call 900 100 133."}
         </div>
       )}
 
-      <Button
+      <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full h-14 bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-[var(--accent-foreground)] font-bold text-base"
+        style={{
+          height: 52, borderRadius: 980,
+          background: isSubmitting ? "rgb(134,134,139)" : "var(--cta-blue)",
+          color: "#fff", border: "none", fontSize: "1rem", fontWeight: 600,
+          letterSpacing: "-0.014em", cursor: isSubmitting ? "not-allowed" : "pointer",
+          transition: "background 0.18s, transform 0.12s", marginTop: 4,
+        }}
+        onMouseEnter={(e) => { if (!isSubmitting) (e.currentTarget as HTMLElement).style.transform = "scale(1.01)"; }}
+        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}
       >
-        {isSubmitting ? t("submitting") : t("submit")}
-      </Button>
+        {isSubmitting ? (es ? "Enviando…" : "Sending…") : (es ? "Enviar mensaje" : "Send message")}
+      </button>
     </form>
   );
 }
 
-function Field({
-  label,
-  error,
-  required,
-  children,
-}: {
-  label: string;
-  error?: string;
-  required?: boolean;
-  children: React.ReactNode;
+function AppleField({ label, error, inputProps }: {
+  label: string; error?: string;
+  inputProps: React.InputHTMLAttributes<HTMLInputElement>;
 }) {
   return (
-    <div className="space-y-1.5">
-      <Label className="text-sm font-medium text-foreground">
+    <div>
+      <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 600, color: "rgb(110,110,115)", letterSpacing: "-0.01em", marginBottom: 6 }}>
         {label}
-        {required && <span className="text-destructive ml-1">*</span>}
-      </Label>
-      {children}
+      </label>
+      <input
+        {...inputProps}
+        style={{
+          width: "100%", height: 50, borderRadius: 14,
+          border: `1.5px solid ${error ? "rgb(255,59,48)" : "rgb(232,232,237)"}`,
+          background: error ? "rgba(255,59,48,0.04)" : "rgb(245,245,247)",
+          padding: "0 16px", fontSize: "0.95rem", letterSpacing: "-0.012em",
+          color: "rgb(29,29,31)", outline: "none", boxSizing: "border-box",
+          transition: "border-color 0.18s, background 0.18s",
+        }}
+        onFocus={(e) => { if (!error) { e.currentTarget.style.borderColor = "var(--cta-blue)"; e.currentTarget.style.background = "#fff"; } }}
+        onBlur={(e) => { if (!error) { e.currentTarget.style.borderColor = "rgb(232,232,237)"; e.currentTarget.style.background = "rgb(245,245,247)"; } }}
+      />
       {error && (
-        <p className="text-destructive text-xs flex items-center gap-1">
-          <AlertCircle size={12} />
-          {error}
+        <p style={{ display: "flex", alignItems: "center", gap: 4, fontSize: "0.78rem", color: "rgb(255,59,48)", marginTop: 4 }}>
+          <AlertCircle size={12} aria-hidden /> {error}
         </p>
       )}
     </div>
